@@ -5,8 +5,7 @@ import os
 fn main() {
 
     // check if we are supplied with the right amount
-    // of aguments
-    // todo: improve error-reporting    
+    // of aguments 
     if os.args.len != 2 {
         println('Wrong Usage : invalid amount of arguments')
         println('Usage: ')
