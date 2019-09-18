@@ -5,10 +5,11 @@ import os
 fn main() {
 
     // check if we are supplied with the right amount
-    // of aguments
-    // todo: improve error-reporting    
+    // of aguments 
     if os.args.len != 2 {
-        error('wrong usage!')
+        println('Wrong Usage : invalid amount of arguments')
+        println('Usage: ')
+        println('create <file>')
         return
     }
 
@@ -17,7 +18,12 @@ fn main() {
     path += '/${os.args[1]}'
 
     file := os.create(path) or {
-        // todo: improve error reporting
+        /**
+         * todo: improve error reporting
+         *  - at the moment, we do not get any information about why
+         *    os.create(path string) ?File failed, creating the file
+         *    => wait (create issue on v itself ?) until we get better error messages  
+         */
         error('unable to create file')
         return
     }
