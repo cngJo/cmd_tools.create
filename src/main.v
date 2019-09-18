@@ -10,7 +10,7 @@ fn main() {
         println('Wrong Usage : invalid amount of arguments')
         println('Usage: ')
         println('create <file>')
-        return
+        exit(1)
     }
 
     // get the path of the file we want to create
@@ -18,7 +18,7 @@ fn main() {
 
     if os.file_exists(path) {
         println('the file $path does already exist.')
-        return
+        exit(1)
     }
 
     file := os.create(path) or {
@@ -29,7 +29,7 @@ fn main() {
          *    => wait (create issue on v itself ?) until we get better error messages  
          */
         error('unable to create file')
-        return
+        exit(1)
     }
 
     file.flush()
