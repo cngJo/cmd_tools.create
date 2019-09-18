@@ -18,7 +18,12 @@ fn main() {
     path += '/${os.args[1]}'
 
     file := os.create(path) or {
-        // todo: improve error reporting
+        /**
+         * todo: improve error reporting
+         *  - at the moment, we do not get any information about why
+         *    os.create(path string) ?File failed, creating the file
+         *    => wait (create issue on v itself ?) until we get better error messages  
+         */
         error('unable to create file')
         return
     }
