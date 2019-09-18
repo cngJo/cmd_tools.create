@@ -13,9 +13,13 @@ fn main() {
         return
     }
 
-    // build the filepath 
-    mut path := os.getwd()
-    path += '/${os.args[1]}'
+    // get the path of the file we want to create
+    path := get_file_path(os.args[1])
+
+    if os.file_exists(path) {
+        println('the file $path does already exist.')
+        return
+    }
 
     file := os.create(path) or {
         /**
@@ -30,4 +34,15 @@ fn main() {
 
     file.flush()
     println('created file $path!')
+}
+
+/**
+ * return the path to a file with the given name in the current directory
+ *
+ * @param filename string
+ * @return string
+ */
+fn get_file_path(filename string) string {
+    path := os.getwd()
+    return '$path/$filename'
 }
