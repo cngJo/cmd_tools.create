@@ -1,3 +1,9 @@
 # Ignore all .c and .exe files
 *.c
 *.exe
+
+# Ignore bin directory
+bin/
+
+# ignore create.dSYM directory
+create.dSYM/
