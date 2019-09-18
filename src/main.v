@@ -12,4 +12,7 @@ fn main() {
         return
     }
 
+    // build the filepath 
+    mut path := os.getwd()
+    path += os.args[1]
 }
