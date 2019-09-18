@@ -1,0 +1,3 @@
+# Ignore all .c and .exe files
+*.c
+*.exe
