@@ -8,7 +8,9 @@ fn main() {
     // of aguments
     // todo: improve error-reporting    
     if os.args.len != 2 {
-        error('wrong usage!')
+        println('Wrong Usage : invalid amount of arguments')
+        println('Usage: ')
+        println('create <file>')
         return
     }
 
