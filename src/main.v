@@ -17,6 +17,11 @@ fn main() {
     mut path := os.getwd()
     path += '/${os.args[1]}'
 
+    if os.file_exists(path) {
+        println('the file $path does already exist.')
+        return
+    }
+
     file := os.create(path) or {
         /**
          * todo: improve error reporting
