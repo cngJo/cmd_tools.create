@@ -3,7 +3,6 @@ module main
 import os
 
 fn main() {
-
     // pass all the arguments to the function, which parses them
     parse_arguments(os.args)
 }
