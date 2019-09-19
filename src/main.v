@@ -4,14 +4,8 @@ import os
 
 fn main() {
 
-    // check if we are supplied with the right amount
-    // of aguments 
-    if os.args.len != 2 {
-        println('Wrong Usage : invalid amount of arguments')
-        println('Usage: ')
-        println('create <file>')
-        exit(1)
-    }
+    // pass all the arguments to the function, which parses them
+    parse_arguments(os.args)
 
     // get the path of the file we want to create
     path := get_file_path(os.args[1])
@@ -45,4 +39,22 @@ fn main() {
 fn get_file_path(filename string) string {
     path := os.getwd()
     return '$path/$filename'
+}
+
+/**
+ * parse the given arguments to the tool
+ *
+ * @param args []string
+ */
+fn parse_arguments(args []string) {
+    if args.len != 2 {
+        error_invalidargument()
+    }
+}
+
+fn error_invalidargument() {
+    println('Wrong Usage : invalid amount of arguments')
+    println('Usage: ')
+    println('create <file>')
+    exit(1)
 }
