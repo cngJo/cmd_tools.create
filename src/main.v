@@ -52,6 +52,9 @@ fn parse_arguments(args []string) {
     }
 }
 
+/**
+ * print error for insalid argument and exit with code 1
+ */
 fn error_invalidargument() {
     println('Wrong Usage : invalid amount of arguments')
     println('Usage: ')
