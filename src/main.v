@@ -42,7 +42,7 @@ fn error_invalidargument() {
 }
 
 /**
- * 
+ * create a new file with the given filename and flush it to the filesystem
  */
 fn create_file(filename string) {
     path := get_file_path(filename)
